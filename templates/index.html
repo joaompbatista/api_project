@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DatifyApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create four equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 25%;
+            padding: 10px;
+            height: 300px;
+            border-width: 5px;
+            border-style: solid;
+            text-align: center;
+            /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="color: #9F2B68; text-align: center;">DATIFY</h1>
+    <div class="row">
+        <div class="column" style="background-color:#ffddf4;">
+            <h2>Meal</h2>
+            <p> {{ value['meal_name'] }}</p>
+            <a><img src={{ value['meal_image'] }} alt="MealImage" style="width:200px;height:150px;"></a>
+        </div>
+        <div class="column" style="background-color:#ffddf4;">
+            <h2>Cocktail</h2>
+            <p> {{ value['cocktail_name'] }}</p>
+            <a><img src={{ value['cocktail_image'] }} alt="CocktailImage" style="width:200px;height:150px;"></a>
+        </div>
+        <div class="column" style="background-color:#ffddf4;">
+            <h2>Music</h2>
+            <!--<p>{{ chosen_artist }}</p>-->
+            <iframe src={{ value['song_url'] }} width="300" height="200" frameborder="0" allowtransparency="true"
+                allow="encrypted-media"></iframe>
+        </div>
+        <div class="column" style="background-color:#ffddf4;">
+            <h2>Ice Breaker</h2>
+            <p>{{ value['trivia'] }}</p>
+        </div>
+        <div class="column" style="background-color:#ffddf4;">
+            <h2>Movie</h2>
+            <p>{{ value['movie_name'] }}</p>
+            <a><img src={{ value['movie_poster'] }} alt="MoviePoster" style="width:100px;height:150px;"></a>
+        </div>
+    </div>
+</body>
+
+</html>
